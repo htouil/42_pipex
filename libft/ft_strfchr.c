@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: htouil <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: htouil <htouil@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 22:30:32 by htouil            #+#    #+#             */
-/*   Updated: 2023/07/04 22:30:33 by htouil           ###   ########.fr       */
+/*   Created: 2023/07/05 16:32:40 by htouil            #+#    #+#             */
+/*   Updated: 2023/07/08 21:05:01 by htouil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pipex.h"
 
-int	ft_strnstr(char *h, char *n, int len)
+int	ft_strfchr(char *s, char c)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
-	if (n[j] == '\0')
-		return (1);
-	while (h[i] != '\0' && n[j] != '\0' && i < len)
+	while (s[i])
 	{
-		while (h[i + j] == n[j] && h[i + j] != '\0' && i + j < len)
-			j++;
-		if (n[j] == '\0')
-			return (0);
-		j = 0;
+		if (s[i] == c)
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }

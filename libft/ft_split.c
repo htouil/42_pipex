@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: htouil <htouil@student.1337.ma>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/04 22:29:51 by htouil            #+#    #+#             */
+/*   Updated: 2023/07/11 18:26:00 by htouil           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../pipex.h"
 
 int	count_it(char *str, char occ)
@@ -29,7 +41,7 @@ void	free_it(char **str, int d)
 char	*ft_substr(char *s, int start, int len)
 {
 	char	*ss;
-	int	i;
+	int		i;
 
 	i = 0;
 	if (!s)

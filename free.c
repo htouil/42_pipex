@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: htouil <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: htouil <htouil@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 22:30:21 by htouil            #+#    #+#             */
-/*   Updated: 2023/07/04 22:30:23 by htouil           ###   ########.fr       */
+/*   Created: 2023/07/11 19:41:16 by htouil            #+#    #+#             */
+/*   Updated: 2023/07/12 23:46:58 by htouil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pipex.h"
+#include "pipex.h"
 
-int	ft_strlen(char *str)
+void	free_arr(char **arr)
 {
 	int	i;
 
-	if (!str)
-		return (0);
 	i = 0;
-	while (str[i] != '\0')
+	while (arr[i])
+	{
+		if (arr[i] != NULL)
+			free(arr[i]);
 		i++;
-	return (i);
+	}
+	free(arr);
 }

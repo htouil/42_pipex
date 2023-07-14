@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: htouil <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: htouil <htouil@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 22:30:32 by htouil            #+#    #+#             */
-/*   Updated: 2023/07/04 22:30:33 by htouil           ###   ########.fr       */
+/*   Created: 2023/07/08 20:04:35 by htouil            #+#    #+#             */
+/*   Updated: 2023/07/12 15:44:43 by htouil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pipex.h"
 
-int	ft_strnstr(char *h, char *n, int len)
+char	*ft_strcpy(char *src)
 {
-	int	i;
-	int	j;
+	int		i;
+	char	*dest;
 
 	i = 0;
-	j = 0;
-	if (n[j] == '\0')
-		return (1);
-	while (h[i] != '\0' && n[j] != '\0' && i < len)
+	if (!src)
+		return (NULL);
+	dest = malloc(sizeof(char) * ft_strlen(src) + 1);
+	if (!dest)
+		return (NULL);
+	while (src[i])
 	{
-		while (h[i + j] == n[j] && h[i + j] != '\0' && i + j < len)
-			j++;
-		if (n[j] == '\0')
-			return (0);
-		j = 0;
+		dest[i] = src[i];
 		i++;
 	}
-	return (1);
+	dest[i] = '\0';
+	return (dest);
 }
