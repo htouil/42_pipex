@@ -6,7 +6,7 @@
 /*   By: htouil <htouil@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 22:30:45 by htouil            #+#    #+#             */
-/*   Updated: 2023/07/13 19:14:44 by htouil           ###   ########.fr       */
+/*   Updated: 2023/09/29 12:46:08 by htouil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ void	forking(char **av, char **envp, int *pipefd)
 		{
 			close(pipefd[0]);
 			close(pipefd[1]);
-			waitpid(pid1, NULL, 0);
 			waitpid(pid2, NULL, 0);
 		}
+		waitpid(pid1, NULL, 0);
 	}
 }
 
